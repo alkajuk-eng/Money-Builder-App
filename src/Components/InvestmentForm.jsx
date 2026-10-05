@@ -1,0 +1,170 @@
+export const InvestmentForm = (props) => {
+  return (
+    // Investment form section
+    <section
+      className="flex
+        flex-col 
+        gap-5 
+        w-full 
+        max-w-[500px] 
+        mx-auto 
+        my-10 
+        p-[30px] 
+        bg-[#f5f7fa] 
+        border 
+        border-[#e2e8f0] 
+        rounded-xl 
+        shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
+    >
+      {/* Initial investment */}
+      <div
+        className="flex 
+          flex-col 
+          gap-2"
+      >
+        <label
+          htmlFor="initial-investment"
+          className="text-[15px] 
+            font-semibold 
+            text-[#334155]"
+        >
+          Initial Investment (£)
+        </label>
+        <input
+          id="initial-investment"
+          type="number"
+          min="1"
+          required
+          value={props.investmentData.InitialInvestment}
+          onChange={(e) =>props.handleInvestmentChange("InitialInvestment",Number(e.target.value))}
+          className="w-full 
+            box-border 
+            px-[14px] 
+            py-3 
+            text-base 
+            text-[#1e293b] 
+            bg-[#f8fafc] 
+            border 
+            border-[#cbd5e1] 
+            rounded-lg 
+            outline-none 
+            transition 
+            duration-200 
+            focus:border-[#3b82f6] 
+            focus:shadow-[0_0_0_3px_rgba(59,130,246,0.15)]"
+        />
+      </div>
+      {/* Annual contribution */}
+      <div
+        className="flex 
+          flex-col 
+          gap-2"
+      >
+        <label
+          htmlFor="annual-investment"
+          className="text-[15px] 
+            font-semibold 
+            text-[#334155]"
+        >
+          Annual Contribution (£)
+        </label>
+        <input
+          id="annual-investment"
+          type="number"
+          min="1"
+          required
+          value={props.investmentData.AnnualContribution}
+          onChange={(e) =>props.handleInvestmentChange("AnnualContribution",Number(e.target.value))}
+          className="w-full 
+            box-border 
+            px-[14px] 
+            py-3 
+            text-base 
+            text-[#1e293b] 
+            bg-[#f8fafc] 
+            border 
+            border-[#cbd5e1] 
+            rounded-lg 
+            outline-none 
+            transition 
+            duration-200 
+            focus:border-[#3b82f6] 
+            focus:shadow-[0_0_0_3px_rgba(59,130,246,0.15)]"
+        />
+      </div>
+      {/* Expected annual return */}
+      <div 
+        className="flex 
+          flex-col 
+          gap-2"
+      >
+        <label
+          htmlFor="return-we-expect"
+          className="text-[15px] 
+            sm:text-base 
+            font-semibold 
+            text-[#334155]"
+        >
+          Expected Annual Return (%)
+        </label>
+        <input
+          id="return-we-expect"
+          type="number"
+          min="1"
+          required
+          value={props.investmentData.ExpectedAnnualReturn}
+          onChange={(e) =>props.handleInvestmentChange("ExpectedAnnualReturn",Number(e.target.value))}
+          className="w-full 
+            box-border 
+            px-[14px] 
+            py-3 
+            text-base 
+            text-[#1e293b] 
+            bg-[#f8fafc] 
+            border 
+            border-[#cbd5e1] 
+            rounded-lg 
+            outline-none 
+            transition 
+            duration-200 
+            focus:border-[#3b82f6] 
+            focus:shadow-[0_0_0_3px_rgba(59,130,246,0.15)]"
+        />
+      </div>
+      {/* Investment period */}
+      <div 
+        className="flex 
+          flex-col 
+          gap-2">
+        <label
+          htmlFor="investment-duration"
+          className="text-[15px] sm:text-base font-semibold text-[#334155]"
+        >
+          Investment Period (Years)
+        </label>
+        <input
+          id="investment-duration"
+          type="number"
+          required
+          value={props.investmentData.InvestmentPeriod}
+          onChange={(e) =>props.handleInvestmentChange("InvestmentPeriod",Number(e.target.value))}
+          className="w-full 
+            box-border 
+            px-[14px] 
+            py-3 
+            text-base 
+            text-[#1e293b] 
+            bg-[#f8fafc] 
+            border 
+            border-[#cbd5e1] 
+            rounded-lg 
+            outline-none 
+            transition 
+            duration-200 
+            focus:border-[#3b82f6] 
+            focus:shadow-[0_0_0_3px_rgba(59,130,246,0.15)]"
+        />
+      </div>
+    </section>
+  );
+};
